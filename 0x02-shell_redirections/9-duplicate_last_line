@@ -1,2 +1,2 @@
 #!/bin/bash
-tail -n 1 < iaco >> iaco
+tail -1 iaco >> iaco
