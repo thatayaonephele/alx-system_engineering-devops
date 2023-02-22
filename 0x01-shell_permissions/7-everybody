@@ -1,2 +1,2 @@
 #!/bin/bash
-chmd ugo+x hello
+chmd +x hello
