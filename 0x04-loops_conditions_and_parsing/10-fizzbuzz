@@ -10,15 +10,15 @@ b = 100
 c = 0
 e = 3
 f = 5
-for num in {a..b}
+for y in {a..b}
 do
-  if (( num % e == c && num % 5 == c ))
+  if (( y % 3 == 00 && y % 5 == 0 ))
   then
     echo "FizzBuzz"
-  elif (( num % e == c ))
+  elif (( y % 3 == 0 ))
   then
     echo "Fizz"
-  elif (( num % f == c ))
+  elif (( y % 5 == 0 ))
   then
     echo "Buzz"
   else
