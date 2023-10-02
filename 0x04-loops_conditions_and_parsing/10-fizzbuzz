@@ -5,14 +5,12 @@
 # Displays Buzz when the number is a multiple of 5
 # Otherwise, displays the number In a list format
 
-a = 1
-b = 100
 c = 0
 e = 3
 f = 5
-for num in {a..b}
+for num in {1..100}
 do
-  if (( num % e == c && num % 5 == c ))
+  if (( num % e == c && num % f == c ))
   then
     echo "FizzBuzz"
   elif (( num % e == c ))
