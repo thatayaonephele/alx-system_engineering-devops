@@ -4,23 +4,19 @@
 # Displays Fizz when the number is a multiple of 3
 # Displays Buzz when the number is a multiple of 5
 # Otherwise, displays the number In a list format
+# Fizzbuzz
 
-a = 1
-b = 100
-c = 0
-e = 3
-f = 5
-for y in {a..b}
+for num in {1..100}
 do
-  if (( y % 3 == 00 && y % 5 == 0 ))
+  if (( num % 5 == 0 && num % 3 == 0 ))
   then
     echo "FizzBuzz"
-  elif (( y % 3 == 0 ))
-  then
-    echo "Fizz"
-  elif (( y % 5 == 0 ))
+  elif (( num % 5 == 0 ))
   then
     echo "Buzz"
+  elif (( num % 3 == 0 ))
+  then
+    echo "Fizz"
   else
     echo "$num"
   fi
