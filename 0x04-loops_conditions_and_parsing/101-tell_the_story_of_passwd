@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 # A script tells a story based on the contents of the "/etc/passwd" file.
-
-file="/etc/passwd"
-
-while IFS= read -r line; do
-  shell=$(echo "$line" | cut -d ':' -f7)
-  info=$(echo "$line" | cut -d ':' -f5)
-  user=$(echo "$line" | cut -d ':' -f1)
-  uid=$(echo "$line" | cut -d ':' -f3)
-  dir=$(echo "$line" | cut -d ':' -f6)
-  pass=$(echo "$line" | cut -d ':' -f2)  
-  gid=$(echo "$line" | cut -d ':' -f4)
-
-  echo "The user $username is part of the $gid gang,"\
-  "lives in $home and rides $shell."\
-  "$uid's place is protected by the passcode $password,"\
-  "more info about the user here: $info"
-done < "$file"
+myfile="/etc/passwd"
+user_name=""
+group_id=""
+cd=""
+while IFS= read -r line
+do
+    user_name="$(echo "$line" | cut -d":" -f1)"
+    group_id="$(echo "$line" | cut -d":" -f4)"
+    cd="$(echo "$line" | cut -d":" -f6)"
+    cmd_shell="$(echo "$line" | cut -d":" -f7)"
+    user_id="$(echo "$line" | cut -d":" -f3)"
+    f6="$(echo "$line" | cut -d":" -f2)"
+    f7="$(echo "$line" | cut -d":" -f5)"
+    echo "The user ${user_name} is part of the ${group_id} gang, lives in ${cd} and rides ${cmd_shell}. ${user_id}'s place is protected by the passcode ${f6}, more info about the user here: ${f7}"
+done < "$myfile"
