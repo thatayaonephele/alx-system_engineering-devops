@@ -1,32 +1,23 @@
-#!/usr/bin/env bash
-# A script that shows information about the alx school file checker "holbertonschool"
+#!/bin/bash
 
-
-file="school";
-if [ -e $file ]; then
-    echo "school file exists";
-    if [ ! -s $file ]; then 
-        echo "school file is empty";
-    else
-        echo "school file is not empty";
-    fi
-
-    if [ -f $file ]; then
-        echo "school is a regular file";
-    fi
-
-else
-    echo "school file does not exist";
-fi
-
-
-
+# Define the file to check
 file="school"
-# Verify file existance
+
+# Check if the file exists
 if [ -e "$file" ]; then
-  echo "school file exists"
+    echo "$file file exists"
+    
+    # Check if the file is empty
+    if [ ! -s "$file" ]; then
+        echo "$file file is empty"
+    else
+        echo "$file file is not empty"
+    fi
+    
+    # Check if the file is a regular file
+    if [ -f "$file" ]; then
+        echo "$file is a regular file"
+    fi
 else
-
-  echo "school file is not empty"
-
+    echo "$file file does not exist"
 fi
