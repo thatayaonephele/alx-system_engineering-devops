@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# Script to group and display visitors by IP and HTTP status code
+# This script groups visitors by IP and HTTP status code and sorts the data by occurrence
 
-awk '{print $1, $9}' apache-access.log | sort | uniq -c | sort -rn | awk '{print $1, $2, $3}'
+awk '{print $1, $9}' apache-access.log | awk '{count[$0]++} END {for (entry in count) print count[entry], entry}' | sort -rn
+
