@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# PID function that simplies the process
+
+pgrep -l bash

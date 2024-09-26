@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# A script that searches for and shows the lines havining the bash word
+# shellcheck disable=SC2009
+
+#Display all system running processes as a list owned by the current user.
+ps -aux | grep bash

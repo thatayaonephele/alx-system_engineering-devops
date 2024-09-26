@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Continuously output "To infinity and beyond" with a 2-second delay between each print.
+
+#1. The for loop will repeat the commands indefinitely by looping over a range that has no end.
+#2. Using the `:` operator always evaluates as true, allowing for continuous execution.
+#3. The echo command outputs the specified text to the console.
+#4. The sleep command introduces a 2-second pause between each iteration.
+for (( ; ; ))
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
