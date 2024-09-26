@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# This script:
+#   Creates /var/run/myscript.pid to store the script's PID.
+#   Prints "To infinity and beyond" forever.
+#   Prints "I hate the kill command" if SIGTERM is received.
+#   Prints "Y U no love me?!" if SIGINT is received.
+#   Deletes /var/run/myscript.pid and exits if SIGQUIT or SIGTERM is received.
+
+file="/var/run/myscript.pid"
+
+# If the PID file doesn't exist, create it.
+if [ ! -e "$file" ]; then
+  touch "$file"
+fi
+
+sleep 2 &
+
+# Save the PID of the sleep process to the file.
+echo "$!" > "$file"
+
+# Handles SIGTERM and SIGQUIT signals: print message, delete file, and exit.
+trap 'echo "I hate the kill command"; rm "$file"; exit' SIGTERM SIGQUIT
+
+# Handles SIGINT signal: prints "Y U no love me?!"
+trap "echo Y U no love me?!" SIGINT
+
+# Infinite loop to print message every 2 seconds.
+for (( ; ; )); do
+  echo "To infinity and beyond"
+  sleep 2
+done
