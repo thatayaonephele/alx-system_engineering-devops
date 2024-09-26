@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Prints a list of active processes on the system.
+#+   Includes processes for all users, even ones without a terminal session.
+
+# This command outputs all running processes on the system.
+ps -auxf
